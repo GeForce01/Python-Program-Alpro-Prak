@@ -1,0 +1,114 @@
+#program pendataan mahasiswa
+#---------------------------
+#library
+import os
+
+#sub program
+def tambah_data_mhs():
+    input_nim     = input("NIM\t\t: ")
+    input_nama    = input("Nama Lengkap\t: ")
+    input_gender  = input("Gender (L/P)\t: ")
+    input_prodi   = input("Program Studi\t: ")
+    input_ipk     = float(input("IPK\t\t: "))
+
+    #mengisi data ke dictionary
+    data_mhs = {"nim": input_nim, 
+                "nama": input_nama, 
+                "gender": input_gender, 
+                "prodi": input_prodi, 
+                "ipk": input_ipk}
+
+    #memasukkan data dictionary ke dalam list
+    data_semua_mhs.append(data_mhs)
+
+def tampil_data_mhs():
+    if (len(data_semua_mhs) == 0):
+        print("Data mahasiswa masih kosong")
+    else:
+        print("NIM \t Nama Mahasiswa \t Gender  Program Studi \t IPK")
+        print("----\t----------------\t-------  --------------\t-----")
+        
+        #menampilkan satu per satu dictionary data_mhs di dalam list data_semua_mhs
+        for mhs in data_semua_mhs:
+            print(mhs["nim"], "\t", mhs["nama"], "\t\t\t", mhs["gender"], "\t", mhs["prodi"], "\t", mhs["ipk"])
+
+def hapus_data_mhs(nim):
+    ketemu = 0
+    for mhs in data_semua_mhs:
+        if (nim==mhs["nim"]):
+            ketemu = 1
+            print("Data Mahasiswa Ditemukan")
+            print("NIM \t Nama Mahasiswa \t Gender  Program Studi \t IPK")
+            print("----\t----------------\t-------  --------------\t-----")
+            print(mhs["nim"], "\t", mhs["nama"], "\t\t\t", mhs["gender"], "\t", mhs["prodi"], "\t", mhs["ipk"])
+            pilih=input("Hapus Data Mahasiswa (Y/T) =")
+            if (pilih=="y" or pilih=="Y"):
+                data_semua_mhs.remove(mhs)
+                print("Data Mahasiswa Dengan NIM = ",mhs["nim"],"Telah Dihapus")
+            else:
+                (pilih=="t" or pilih=="T")
+                print("Data Mahasiswa Dengan NIM = ",mhs["nim"],"Tidak Dihapus")
+
+        break
+
+    if (ketemu==0):
+        print("Data Mahasiswa Dengan NIM = ",mhs["nim"],"Tidak Ditemukan")
+    #print("Anda harus membuat kode program untuk menghapus data mahasiswa berdasarkan NIMnya")
+    #print("Untuk menghapus data pada list, gunakan perintah pop dengan memasukkan indeks datanya")
+
+def cari_data_mhs(nim):
+    ketemu = 0
+    for mhs in data_semua_mhs:
+        if (nim==mhs["nim"]):
+            ketemu = 1
+            print("Data Mahasiswa Ditemukan")
+            print("NIM \t Nama Mahasiswa \t Gender  Program Studi \t IPK")
+            print("----\t----------------\t-------  --------------\t-----")
+            print(mhs["nim"], "\t", mhs["nama"], "\t\t\t", mhs["gender"], "\t", mhs["prodi"], "\t", mhs["ipk"])
+        
+        break
+
+    if (ketemu == 0):
+        print("Data Mahasiswa Dengan NIM = ",mhs["nim"],"Tidak Ditemukan")
+    #print("Anda harus membuat kode program untuk mencari data mahasiswa berdasarkan NIMnya")
+    #rint("Setelah NIM yang dicari ketemu, maka tampilkan data mahasiswanya")
+
+#program utama
+#inisialisasi variabel global (variabel yang bisa diakses lewat manapun)
+data_mhs = {}       #dictionary
+data_semua_mhs = [] #list
+menu = 0            #variabel biasa
+
+while (menu != 5):
+    #membersihkan layar command prompt
+    os.system("cls")
+
+    #menampilkan menu
+    print("----------------------------")
+    print("Aplikasi Pendataan Mahasiswa UTY")
+    print("1. Lihat Data Mahasiswa")
+    print("2. Tambah Data Mahasiswa")
+    print("3. Hapus Data Mahasiswa")
+    print("4. Cari Data Mahasiswa")
+    print("5. Keluar")
+    print("----------------------------")
+    menu = int(input("Pilih Menu: "))
+
+    #cek menu
+    if (menu == 1):
+        tampil_data_mhs()
+    elif (menu == 2):
+        tambah_data_mhs()
+    elif (menu == 3):
+        hapus = input("Masukkan NIM yang akan dihapus: ")
+        hapus_data_mhs(hapus)
+    elif (menu == 4):
+        cari = input("Masukkan NIM yang ingin dicari: ")
+        cari_data_mhs(cari)
+    elif (menu == 5):
+        print("Anda telah keluar")
+    else:
+        print("Menu yang dipilih tidak tersedia")
+    
+    #menunggu user menekan enter untuk melanjutkan
+    input("\nTekan ENTER untuk melanjutkan")
