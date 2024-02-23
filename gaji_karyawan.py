@@ -1,0 +1,73 @@
+print("===Informasi Gaji Karyawan===")
+print("1. Karyawan Tetap")
+print("2. Karyawan Tidak Tetap")
+pilihan=int(input("Masukkan Pilihan Anda = "))
+if(pilihan==1):
+        m=int(input("Masukkan Masa Kerja Anda (Tahun) = "))
+        if(m<=5):
+                print()
+                print("Rincian Gaji Anda Adalah")
+                print()
+                print("Gaji Pokok = Rp.2500000")
+                print("Uang Makan Dan Transport = Rp.1000000")
+                print("Uang Kesejahteraan Karyawan = Rp.5000000")
+                print()
+                gt=2500000+1000000+5000000
+                print("Gaji Anda Adalah = ",gt)
+                print()
+                print("===Terima Kasih===")
+        elif(m>=5 and m<=10):
+                print()
+                print("Rincian Gaji Anda Adalah")
+                print()
+                print("Gaji Pokok = Rp.3000000")
+                print("Uang Makan Dan Transport = Rp.1000000")
+                print("Uang Kesejahteraan Karyawan = Rp.5000000")
+                print()
+                gt=3000000+1000000+5000000
+                print("Gaji Anda Adalah = ",gt)
+                print()
+                print("===Terima Kasih===")
+        else:
+                print()
+                print("Rincian Gaji Anda Adalah")
+                print()
+                print("Gaji Pokok = Rp.3500000")
+                print("Uang Makan Dan Transport = Rp.1000000")
+                print("Uang Kesejahteraan Karyawan = Rp.5000000")
+                print()
+                gt=3500000+1000000+5000000
+                print("Gaji Anda Adalah = ",gt)
+                print()
+                print("===Terima Kasih===")
+elif(pilihan==2):
+        m=int(input("Masukkan Masa Kerja Anda (Tahun) = "))
+        if(m<=5):
+                print()
+                print("Rincian Gaji Anda Adalah")
+                print()
+                print("Gaji Pokok = Rp.750000")
+                print("Uang Makan Dan Transport = Rp.1000000")
+                print("Uang Kesejahteraan Karyawan = Rp.2000000")
+                print()
+                gt=750000+1000000+2000000
+                print("Gaji Anda Adalah = ",gt)
+                print()
+                print("===Terima Kasih===")
+        else:
+                print()
+                print("Rincian Gaji Anda Adalah")
+                print()
+                print("Gaji Pokok = Rp.1000000")
+                print("Uang Makan Dan Transport = Rp.1000000")
+                print("Uang Kesejahteraan Karyawan = Rp.2000000")
+                print()
+                gt=1000000+1000000+2000000
+                print("Gaji Anda Adalah = ",gt)
+                print()
+                print("===Terima Kasih===")
+else:
+        print()
+        print("Maff Pilihan Anda Tidak Tersedia")
+        print()
+        print("===Terima Kasih===")
